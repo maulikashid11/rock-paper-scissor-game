@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    padding: 10px;
+    position: relative;
+}
+
+.logo-score {
+    margin: auto;
+    width: 700px;
+    max-height: 200px;
+    padding: 20px;
+    border: 10px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 60%;
+    margin-bottom: 20px;
+}
+.score {
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.score-heading {
+    font-size: 24px;
+    color: hsl(229, 64%, 46%);
+    font-weight: bold;
+}
+
+.score-number {
+    font-size: 54px;
+    color: hsl(229, 25%, 31%);
+    font-weight: bold;
+}
+
+.rock-paper-scissor-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: max-content;
+    margin: auto;
+    margin-top: 80px;
+}
+
+main.round-starts .rock-paper-scissor-container {
+    display: none;
+}
+
+.triangle-bg {
+    width: 300px;
+    pointer-events: none;
+}
+
+.triangle-bg img {
+    width: 100%;
+}
+
+.rock-paper-scissor-container .icon {
+    cursor: pointer;
+    max-width: 140px;
+    max-height: 140px;
+    padding: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.rock-paper-scissor-container img{
+    pointer-events: none;
+}
+.rock-paper-scissor-container .paper {
+    left: -50px;
+    top: -50px;
+}
+
+.rock-paper-scissor-container .scissor {
+    right: -50px;
+    top: -50px;
+    border: 10px solid hsl(39, 89%, 49%);
+}
+
+.rock-paper-scissor-container .rock {
+    bottom: -50px;
+    border: 10px solid hsl(349, 71%, 52%);
+}
+
+
+.paper {
+    border: 10px solid hsl(230, 89%, 62%);
+}
+
+.scissor {
+    border: 10px solid hsl(39, 89%, 49%);
+}
+
+.rock {
+    border: 10px solid hsl(349, 71%, 52%);
+}
+
+
+.rules {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 2px solid hsl(217, 16%, 45%);
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main.round-starts .round {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: max-content;
+    margin: auto;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.round {
+    display: none;
+}
+
+.round .round-icon {
+    cursor: pointer;
+    max-width: 100px;
+    max-height: 100px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.round .round-icon img{
+    width: 100%;
+}
+
+.round .you,
+.round .result-container,
+.round .house {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.round .you p,
+.round .house p {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.round .result-container p {
+    color: white;
+    font-size: 40px;
+    margin: 20px;
+
+}
+
+.round .result-container {
+    display: none;
+}
+
+.round.result .result-container {
+    display: flex;
+}
+
+.round .result-container button {
+    padding: 10px 15px;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px gray;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.rules-popup{
+    display: none;
+}
+main.show-rules .rules-popup {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup-container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: 0 0 5px 5px gray;
+}
+.popup-container .rules-close{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.popup-container .rules-close p{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: hsl(217, 16%, 45%);
+}
+.popup-container .rules-close .close-popup{
+    cursor: pointer;
+}
+
+
+@media (max-width:700px){
+    .logo-score{
+        margin: 0;
+        max-width: 100%;
+    }
+    .logo-score > img{
+        width: 100px;
+        height: 100px;
+    }
+    .triangle-bg{
+        width: 200px;
+    }
+    .icon{
+        width: 80px;
+        height: 80px;
+    }
+    main.round-starts .round{
+        margin-top: 0;
+        flex-direction: column;
+        position: relative;
+    }
+    .round.result .result-container{
+    }
+}
